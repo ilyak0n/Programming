@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    cout << "Введите число ";
+    int a, k=0, i=1;
+    cin >> a;
+    for (i; i<a+1; i++){
+        if (a%i == 0)
+        {
+            k += 1;
+        }
+    }
+    if (k <= 2)
+    {
+        cout << "Число простое" << endl;
+    }
+    else
+    {
+        cout << "Число составное" << endl;
+    }
+    return 0;
+}

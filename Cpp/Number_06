@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    int i=1, x, y;
+    cout << "Введите число для которого хотите построить таблицу умножения: ";
+    cin >> x;
+    while (i<11)
+    {
+        cout << i*x << endl;
+        i++;
+    }
+    return 0;
+}

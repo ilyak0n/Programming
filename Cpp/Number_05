@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    float m, km;
+    std::cout << "Введите количество метров: ";
+    std::cin >> m;
+    km = m/1000;
+    std::cout << m << " метров будет равно " << km << " километрам" << std::endl;
+    return 0;
+}

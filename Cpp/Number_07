@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    cout << "Введите число, факториал которого хотите посчитать: ";
+    int a, i=1, x=1;
+    cin >> a;
+    while (i<a)
+    {
+        i++;
+        x = x*i;
+    }
+    cout << "Факториал " << a << " равен " << x << endl;
+    return 0;
+}

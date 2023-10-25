@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    int c, f;
+    std::cout << "Введите градусы Цельсия: ";
+    std::cin >> c;
+    f = (c * 9/5) + 32;
+    std::cout << c << " Градусов по Цельсию будет равно " << f << " по Фаренгейту" << std::endl;
+    return 0;
+}
