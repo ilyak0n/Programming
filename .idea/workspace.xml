@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3f9a4cc-26b7-4628-80c8-43f27fcd0139" name="Changes" comment="hometask">
-      <change afterPath="$PROJECT_DIR$/Cpp/Number_10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d3f9a4cc-26b7-4628-80c8-43f27fcd0139" name="Changes" comment="new_py">
+      <change afterPath="$PROJECT_DIR$/hometask_for_09.11.23/queue_for_C++.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hometask_for_09.11.23/stack_for_python.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,14 +184,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698346563436</updated>
     </task>
-    <task id="LOCAL-00002" summary="hometask">
-      <created>1699462285307</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1699462285307</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +200,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new_py" />
-    <MESSAGE value="hometask" />
-    <option name="LAST_COMMIT_MESSAGE" value="hometask" />
+    <option name="LAST_COMMIT_MESSAGE" value="new_py" />
   </component>
 </project>
