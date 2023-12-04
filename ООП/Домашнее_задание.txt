@@ -1,0 +1,204 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <vector>
+using namespace std;
+
+// создание класса и объекта
+class Dog {
+public:
+    string name;
+    int age;
+
+    Dog(const string& name, const int age): name(name), age(age) {}
+};
+
+// инкапсуляция
+class BankSchet {
+private:
+    double balance;
+    int number;
+public:
+    BankSchet(int number) : number(number), balance(0) {}
+    void popolnit(double summa) {
+        balance += summa;
+    }
+    void snat(double summa) {
+        if (summa <= balance) {
+            balance -= summa;
+        } else {
+            cout << "Баланс меньше суммы" << endl;
+        }
+    }
+    double getBalance() {
+        return balance;
+    }
+};
+
+// наследование
+class Figure {
+public:
+    virtual double calculateArea() const = 0;
+};
+class Rectangle : public Figure {
+private:
+    double width, length;
+public:
+    Rectangle(double w, double l) : width(w), length(l) {}
+    double calculateArea() const override {
+        return length*width;
+    }
+};
+class Circle : public Figure {
+private:
+    double radius;
+public:
+    Circle(double r): radius(r) {}
+    double calculateArea() const override {
+        return M_PI*radius*radius;
+    }
+};
+
+// полиморфизм и полиморфное поведение
+class Fruits {
+public:
+    virtual void getVitamins() {
+        cout << "Витамины получены" << endl;
+    }
+};
+class Apple: public Fruits {
+public:
+    void getVitamins() override {
+        cout << "Витамины от яблока получены" << endl;
+    }
+};
+class Orange: public Fruits {
+public:
+    void getVitamins() override {
+        cout << "Витамины от апельсина получены" << endl;
+    }
+};
+
+// иерархия классов
+class Transport {
+private:
+    int speed;
+    string type;
+public:
+    Transport(int speed, string type): speed(speed), type(type) {}
+    int getSpeed() const {
+        return speed;
+    }
+    string getType() const {
+        return type;
+    }
+    void DisplayInfo() {
+        cout << "Скорость: " << speed << ", Тип: " << type << endl;
+    }
+};
+class Car: public Transport {
+private:
+    string brand;
+public:
+    Car(int speed, string type, string brand): Transport(speed, type), brand(brand) {}
+    void DisplayInfo() const {
+        cout << "Скорость: " << getSpeed() << ", Тип: " << getType() << ", Марка: " << brand << endl;
+    }
+};
+class Bicycle: public Transport {
+private:
+    string color;
+public:
+    Bicycle(int speed, string type, string color): Transport(speed, type), color(color) {}
+    void DisplayInfo() const {
+        cout << "Скорость: " << getSpeed() << ", Тип: " << getType() << ", Цвет: " << color << endl;
+    }
+};
+
+// использование наследования и композиции
+class House {
+public:
+    int rooms;
+    string address;
+    House(int rooms, string address) : rooms(rooms), address(address) {}
+};
+class Person {
+public:
+    string name;
+    int age;
+    Person(string name, int age) : name(name), age(age) {}
+};
+class Resident : public Person {
+public:
+    House* residence;
+    Resident(string name, int age) : Person(name, age), residence(nullptr) {}
+    void setResidence(House* house) {
+        residence = house;
+    }
+};
+
+int main () {
+    setlocale(LC_ALL, "Russian");
+
+    // создание класса и объекта
+    Dog dog1("Шарик", 5);
+    Dog dog2("Бобик", 6);
+    cout << "Имя: " << dog1.name << ", возраст: " << dog1.age << "лет" << endl;
+    cout << "Имя: " << dog2.name << ", возраст: " << dog2.age << "лет" << endl;
+    cout << "\n" << endl;
+
+    // инкапсуляция
+    BankSchet schet1(3333);
+    schet1.popolnit(300);
+    cout << "Ваш баланс: " << schet1.getBalance() << endl;
+    schet1.snat(200);
+    cout << "Ваш баланс: " << schet1.getBalance() << endl;
+    schet1.snat(500);
+    cout << "Ваш баланс: " << schet1.getBalance() << endl;
+    cout << "\n" << endl;
+
+    // наследование
+    Circle smth(5);
+    cout << "Площаь круга: " << smth.calculateArea() << endl;
+    Rectangle anyth(10,2);
+    cout << "Площадь прямоугольника: " << anyth.calculateArea() << endl;
+    cout << "\n" << endl;
+
+    // полиморфизм
+    vector<Fruits*> fruits;
+    fruits.push_back(new Apple());
+    fruits.push_back(new Orange());
+    for (Fruits* obj : fruits) {
+        obj->getVitamins();
+    }
+    cout << "\n" << endl;
+
+    // иерархия классов
+    Car c(100, "Четырехколёсный", "Toyota");
+    c.DisplayInfo();
+    Bicycle b(20, "Двухколёсный", "Желтый");
+    b.DisplayInfo();
+    cout << "\n" << endl;
+
+    // полиморфное поведение
+    Figure* figures[2];
+    Circle circle(5);
+    Rectangle rect(4, 5);
+    figures[0] = &circle;
+    figures[1] = &rect;
+    for (int i = 0; i < 2; ++i) {
+        cout << "Площадь фигуры " << i + 1 << ": " << figures[i]->calculateArea() << endl;
+    }
+    cout << "\n" << endl;
+
+    // использование наследования и композиции
+    House h(13, "Московская улица");
+    Resident r("Илья", 18);
+    r.setResidence(&h);
+    cout << "Житель: " << r.name << ", Возраст: " << r.age << endl;
+    if (r.residence != nullptr) {
+        cout << "Житель: " << r.residence->rooms << " комната, " << r.residence->address << endl;
+    }
+
+    return 0;
+}

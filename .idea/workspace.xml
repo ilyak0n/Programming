@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3f9a4cc-26b7-4628-80c8-43f27fcd0139" name="Changes" comment="new_py">
-      <change afterPath="$PROJECT_DIR$/hometask_for_09.11.23/queue_for_C++.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hometask_for_09.11.23/stack_for_python.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ООП/Домашнее_задание.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ООП/Практика_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ООП/Практика_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2XGwTUaQ4V0mzwbGXc9lOterA2X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">

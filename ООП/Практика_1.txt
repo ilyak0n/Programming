@@ -1,0 +1,76 @@
+#include <iostream>  // для ввода/вывода.
+#include <cmath> //  для использования математических функций, таких как M_PI.
+#include <stdexcept> // для обработки исключений
+#include <vector>
+
+using namespace std;
+
+class Figure {
+public:
+    // Виртуальный метод для расчета площади
+    virtual double calculateArea() const = 0;
+
+    // Виртуальный деструктор
+    virtual ~Figure() {}
+};
+
+class Rectangle: public Figure {
+private:
+    double width, height;
+public:
+    Rectangle(double w, double h): width(w), height(h) {}
+
+    double calculateArea() const override
+    {
+        if (width < 0 || height < 0) {
+            throw 1;
+        } else if (width == 0 || height == 0) {
+            throw 2;
+        }
+        return width * height;
+    }
+};
+
+class Circle: public Figure {
+private:
+    double radius;
+public:
+    Circle(double r): radius(r) {}
+
+    double calculateArea() const override
+    {
+        if (radius < 0) {
+            throw 1;
+        } else if (radius == 0) {
+            throw 2;
+        }
+        return M_PI * radius * radius;
+    }
+};
+
+
+int main() {
+
+    std::vector<Figure*> shapes;
+
+    shapes.push_back(new Rectangle(8,7));
+    shapes.push_back(new Rectangle(-1,3));
+    shapes.push_back(new Rectangle(2,0));
+
+    shapes.push_back(new Circle(5));
+    shapes.push_back(new Circle(-1));
+    shapes.push_back(new Circle(0));
+
+    for (const auto& shape: shapes) {
+        try {
+            cout << "Area" << shape -> calculateArea() << endl;
+        } catch (int exeption) {
+            if (exeption == 1) {
+                cout << "Exeption_1. Фигура с отрицательными сторонами" << endl;
+            } else if (exeption == 2) {
+                cout << "Exeption_2. Фигура с нулевыми сторонами" << endl;
+            }
+        }
+    }
+    return 0;
+}
